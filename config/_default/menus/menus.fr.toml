@@ -1,0 +1,39 @@
+[[main]]
+name = "Accueil"
+url = ""
+weight = 10
+
+[[main]]
+name = "à propos"
+url = "about"
+weight = 20
+title = "Made with ❤️ by the Hugo Bootstrap Theme team"
+
+[[main]]
+identifier = "appartements"
+name = "Appartements"
+url = "appartements"
+weight = 40
+
+[[main]]
+name = "Couvercle T2"
+url = "appartements/couvercle"
+weight = 100
+parent = "appartements"
+
+[[main]]
+name = "Charpoua T1"
+url = "appartements/charpoua"
+weight = 100
+parent = "appartements"
+
+[[main]]
+name = "Betty T1"
+url = "appartements/betty"
+weight = 100
+parent = "appartements"
+
+[[main]]
+name = "Contact"
+url = "contact"
+weight = 100

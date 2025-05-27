@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/">Chamonix Apartments</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                {{- $current := . -}}
+                {{- $section := $current.Section -}}
+                {{ range .Site.Menus.main -}}
+                {{- $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) -}}
+                {{- $active = or $active (eq .Name $current.LinkTitle) -}}
+                {{- $active = or $active (and (eq .Name ($section | humanize)) (eq $current.Section $section)) -}}
+                {{ if .HasChildren }}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ .Name }}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        {{ range .Children -}}
+                        {{- $active = eq .Name $current.LinkTitle -}}
+                        <li>
+                            <a class="dropdown-item{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}"{{ if $active }} aria-current="true"{{ end }}>
+                                {{ .Name }}
+                            </a>
+                        </li>
+                        {{ end -}}
+                    </ul>
+                </li>
+                {{ else }}
+                <li class="nav-item">
+                    <a class="nav-link{{ if $active }} active{{ end }}" aria-current="page" href="{{ .URL | relLangURL }}"{{ with .Title }} title="{{ . }}" aria-label="{{ . }}"{{ end }}>{{ .Name }}</a>
+                </li>
+                {{ end }}
+                {{ end -}}
+                
+                
+                
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarLanguageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ .Site.Language.LanguageName }}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarLanguageDropdown">
+                        <li>
+                            <a class="dropdown-item active" aria-current="true" href="{{ .RelPermalink }}">
+                                {{ .Site.Language.LanguageName }}
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        {{ if .IsTranslated }}
+                            {{ range .Translations }}
+                                <li>
+                                    <a class="dropdown-item" rel="alternate" href="{{ .RelPermalink }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">
+                                        {{ .Language.LanguageName }}
+                                    </a>
+                                </li>
+                            {{ end }}
+                        {{ else }}
+                            {{ range .Site.Home.AllTranslations }}
+                                {{ if ne $.Site.Language.Lang .Language.Lang }}
+                                    <li>
+                                        <a class="dropdown-item" rel="alternate" href="{{ .RelPermalink }}" hreflang="{{ .Lang }}" lang="{{ .Lang }}">
+                                            {{ .Language.LanguageName }}
+                                        </a>
+                                    </li>
+                                {{ end }}
+                            {{ end }}
+                        {{ end }}
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

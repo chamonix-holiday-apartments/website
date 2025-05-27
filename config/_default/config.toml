@@ -1,0 +1,53 @@
+baseURL = 'http://localhost:1313/'
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = true
+
+title = 'Chamonix Apartments'
+
+
+# Enable multilingual features
+enableGitInfo = false
+enableRobotsTXT = true
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    languageCode = "en"
+    weight = 1
+    [languages.en.permalinks]
+      apartments = "/apartments/:filename"
+
+  [languages.fr]
+    contentDir = "content/fr"
+    languageName = "Français"
+    languageCode = "fr"
+    weight = 2
+    [languages.fr.permalinks]
+      appartements = "/appartements/:filename"
+
+[build]
+  writeStats = true
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.99.1"
+    max = ""
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "node_modules"
+    target = "assets/node_modules"
+  
+[params]
+  description = "Luxury apartments in the heart of Chamonix"
+  default_og_image = "static/images/stylish_apartments_in_the_heart_of_chamonix.jpg"

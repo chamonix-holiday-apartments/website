@@ -1,0 +1,30 @@
+{{ define "main" }}
+<main class="flex-grow-1">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="display-4 text-center">{{ .Title }}</h1>
+                <p class="lead text-center">{{ .Description }}</p>
+                {{ .Content }}
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            {{ range .Pages }}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    {{ if .Params.image }}
+                    <img src="{{ .Params.image }}" class="card-img-top" alt="{{ .Title }}">
+                    {{ end }}
+                    <div class="card-body">
+                        <h2 class="h5 card-title">{{ .Title }}</h2>
+                        <p class="card-text">{{ .Description }}</p>
+                        <a href="{{ .Permalink }}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</main>
+{{ end }}

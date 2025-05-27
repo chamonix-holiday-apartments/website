@@ -1,0 +1,27 @@
+// Required Core (don't skip these)
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+
+// Layout & Components you'll definitely use
+@import "../../node_modules/bootstrap/scss/reboot";     // Basic reset
+@import "../../node_modules/bootstrap/scss/type";       // Typography
+@import "../../node_modules/bootstrap/scss/containers"; // Container layouts
+@import "../../node_modules/bootstrap/scss/grid";       // Grid system
+@import "../../node_modules/bootstrap/scss/navbar";     // Navigation
+@import "../../node_modules/bootstrap/scss/buttons";    // Buttons
+@import "../../node_modules/bootstrap/scss/card";       // Cards for apartment displays
+@import "../../node_modules/bootstrap/scss/images";
+@import "../../node_modules/bootstrap/scss/carousel";      // Image utilities
+
+// Utilities (recommended)
+@import "../../node_modules/bootstrap/scss/utilities";  // Utility classes
+@import "../../node_modules/bootstrap/scss/utilities/api";
+@import "bootstrap/carousel";
+// @import "bootstrap/scss/bootstrap";
+
+@import "styles"; 

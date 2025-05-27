@@ -1,0 +1,47 @@
+{{ $id := .Get "id" }}
+{{ $images := .Page.Resources.Match (.Get "imagesPattern") }}
+
+{{ if eq (len $images) 0 }}
+<div class="alert alert-warning">
+    No images found matching pattern: {{ .Get "imagesPattern" }}
+</div>
+{{ end }}
+
+<div id="{{ $id }}" class="carousel slide" data-bs-ride="carousel">
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+        {{ range $index, $_ := $images }}
+            <button type="button" 
+                    data-bs-target="#{{ $id }}" 
+                    data-bs-slide-to="{{ $index }}" 
+                    {{ if eq $index 0 }}class="active" aria-current="true"{{ end }}
+                    aria-label="Slide {{ add $index 1 }}">
+            </button>
+        {{ end }}
+    </div>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+        {{ range $index, $image := $images }}
+            <div class="carousel-item {{ if eq $index 0 }}active{{ end }}">
+                {{ $resized := $image.Resize "1200x" }}
+                {{ $filename := path.Base $image.Name }}
+                {{ $alt := replace (replace $filename "_" " ") ".jpg" "" | title }}
+                <img src="{{ $image.RelPermalink }}" 
+                     class="d-block w-100" 
+                     loading="lazy"
+                     alt="{{ $alt }}">
+            </div>
+        {{ end }}
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#{{ $id }}" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#{{ $id }}" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
