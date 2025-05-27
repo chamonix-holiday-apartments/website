@@ -2,7 +2,7 @@ baseURL = 'http://localhost:1313/'
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 
-title = 'Chamonix Apartments'
+title = 'Chamonix Holiday Apartments'
 
 
 # Enable multilingual features
@@ -17,6 +17,10 @@ enableRobotsTXT = true
     [languages.en.permalinks]
       apartments = "/apartments/:filename"
 
+    [languages.en.params]
+      footerAboutText = "We’re a local couple living in Chamonix who have been renting our apartments for over 10 years."
+    
+
   [languages.fr]
     contentDir = "content/fr"
     languageName = "Français"
@@ -24,6 +28,8 @@ enableRobotsTXT = true
     weight = 2
     [languages.fr.permalinks]
       appartements = "/appartements/:filename"
+    [languages.fr.params]
+      footerAboutText = "Nous sommes un couple local vivant à Chamonix et louons nos appartements depuis plus de 10 ans."
 
 [build]
   writeStats = true

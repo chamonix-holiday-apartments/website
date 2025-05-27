@@ -4,12 +4,6 @@ url = ""
 weight = 10
 
 [[main]]
-name = "à propos"
-url = "about"
-weight = 20
-title = "Made with ❤️ by the Hugo Bootstrap Theme team"
-
-[[main]]
 identifier = "appartements"
 name = "Appartements"
 url = "appartements"
