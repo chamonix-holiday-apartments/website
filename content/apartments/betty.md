@@ -21,7 +21,7 @@ url: "/en/apartments/betty"
             <a href="https://www.airbnb.co.uk/rooms/38371795?guests=1&adults=1&s=67&unique_share_id=8dee21b8-ea35-48cb-8a1c-626d092cac59&source_impression_id=p3_1748260782_P3wXjFEvnXSJ8GUv" class="btn btn-primary btn-lg px-4 gap-3"
             target="_blank"
             rel="noopener noreferrer">View on Airbnb</a>
-            <a href="/en/contact" class="btn btn-outline-primary btn-lg px-4">Contact Us</a>
+            {{< contact-button >}} 
         </div>
     </div>
 </div>

@@ -19,7 +19,7 @@ description: "1 bedroom apartment which sleeps up to 4 people, in the heart of C
             <a href="https://www.airbnb.co.uk/rooms/2618645?guests=1&adults=1&s=67&unique_share_id=e3b1a17e-f4ef-437c-8078-412f2047da8e" class="btn btn-primary btn-lg px-4 gap-3"
             target="_blank"
             rel="noopener noreferrer">View on Airbnb</a>
-            <a href="/en/contact" class="btn btn-outline-primary btn-lg px-4">Contact Us</a>
+            {{< contact-button >}} 
         </div>
     </div>
 </div>

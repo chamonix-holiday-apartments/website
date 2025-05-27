@@ -22,7 +22,7 @@ aliases:
             <a href="https://www.airbnb.fr/rooms/38371795?guests=1&adults=1&s=67&unique_share_id=c17fbd51-d4e2-40fb-89cc-0979e100e45d" class="btn btn-primary btn-lg px-4 gap-3"
             target="_blank"
             rel="noopener noreferrer">Voir sur Airbnb</a>
-            <a href="/fr/contact" class="btn btn-outline-primary btn-lg px-4">Contactez-nous</a>
+            {{< contact-button >}} 
         </div>
     </div>
 </div>

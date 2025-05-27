@@ -44,7 +44,7 @@ description: "2 bedroom apartment which sleeps 5 people, private parking in the 
             <a href="https://www.airbnb.com/l/gqMXamJ0" class="btn btn-primary btn-lg px-4 gap-3"
             target="_blank"
             rel="noopener noreferrer">View on Airbnb</a>
-            <a href="/en/contact" class="btn btn-outline-primary btn-lg px-4">Contact Us</a>
+            {{< contact-button >}} 
         </div>
     </div>
 </div>
