@@ -5,6 +5,16 @@ section: "appartements"
 url: "/appartements/couvercle"
 aliases:
     - /fr/appartements/couvercle
+schema:
+  type: "LodgingBusiness"
+  rooms: 2
+  maxOccupancy: 5
+  amenities:
+    - name: "Private Parking"
+      value: true
+    - name: "Ski Access"
+      value: "100m to Savoy lift"
+  priceRange: "$$"
 ---
 
 

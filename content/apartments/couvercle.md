@@ -1,33 +1,17 @@
 ---
 title: "Apartment Couvercle"
 description: "2 bedroom apartment which sleeps 5 people, private parking in the heat of Chamonix"
+schema:
+  type: "LodgingBusiness"
+  rooms: 2
+  maxOccupancy: 5
+  amenities:
+    - name: "Private Parking"
+      value: true
+    - name: "Ski Access"
+      value: "100m to Savoy lift"
+  priceRange: "$$"
 ---
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HolidayRental",
-  "name": "Apartment Couvercle",
-  "description": "2 bedroom apartment which sleeps 5 people, private parking in the heart of Chamonix. Located less than 100m from the savoy lift which links into both Brevent and Flégère ski resorts.",
-  "numberOfRooms": 2,
-  "occupancy": {
-    "@type": "QuantitativeValue",
-    "maxValue": 5
-  },
-  "amenityFeature": [
-    {
-      "@type": "LocationFeatureSpecification",
-      "name": "Private Parking"
-    },
-    {
-      "@type": "LocationFeatureSpecification",
-      "name": "Ski Access",
-      "value": "100m to Savoy lift"
-    }
-  ],
-  "url": "https://www.airbnb.com/l/gqMXamJ0"
-}
-</script>
-
 
 {{< carousel imagesPattern="*.jpg" id="couvercleCarousel" >}}
 

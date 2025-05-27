@@ -2,6 +2,16 @@
 title: "Apartment Betty"
 description: "Central 1 bedroom apartment which sleeps up to 4 people, with private parking and balcony view on mont blanc"
 url: "/en/apartments/betty"
+schema:
+  type: "LodgingBusiness"
+  rooms: 1
+  maxOccupancy: 4
+  amenities:
+    - name: "Private Parking"
+      value: true
+    - name: "Balcony"
+      value: true
+  priceRange: "$"
 
 ---
 

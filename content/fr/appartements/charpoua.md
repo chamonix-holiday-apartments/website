@@ -5,6 +5,14 @@ section: "appartements"
 url: "/appartements/charpoua"
 aliases:
     - /fr/appartements/charpoua
+schema:
+  type: "LodgingBusiness"
+  rooms: 1
+  maxOccupancy: 4
+  amenities:
+    - name: "Ski Access"
+      value: "100m to Savoy lift"
+  priceRange: "$"
 ---
 
 

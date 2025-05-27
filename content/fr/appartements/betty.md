@@ -5,6 +5,16 @@ section: "appartements"
 url: "/appartements/betty"
 aliases:
     - /fr/appartements/betty
+schema:
+  type: "LodgingBusiness"
+  rooms: 1
+  maxOccupancy: 4
+  amenities:
+    - name: "Private Parking"
+      value: true
+    - name: "Balcony"
+      value: true
+  priceRange: "$"
 ---
 
 {{< carousel imagesPattern="*.jpg" id="bettyCarousel" >}}

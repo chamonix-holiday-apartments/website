@@ -1,6 +1,14 @@
 ---
 title: "Apartment Charpoua"
 description: "1 bedroom apartment which sleeps up to 4 people, in the heart of Chamonix"
+schema:
+  type: "LodgingBusiness"
+  rooms: 1
+  maxOccupancy: 4
+  amenities:
+    - name: "Ski Access"
+      value: "100m to Savoy lift"
+  priceRange: "$"
 ---
 
 

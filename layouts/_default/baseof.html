@@ -32,6 +32,88 @@
     {{ $js := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
     <script src="{{ $js.RelPermalink }}" defer></script>
 
+    {{ if .IsHome }}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LodgingBusiness",
+        "name": "Chamonix Holiday Apartments",
+        "description": "Luxury apartments in the heart of Chamonix",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Chamonix",
+            "addressCountry": "FR"
+        },
+        "url": "https://chamonix-holiday-apartments.github.io/website/",
+        "areaServed": "Chamonix",
+        "priceRange": "$-$$",
+        "image": "https://chamonix-holiday-apartments.github.io/website/images/stylish_apartments_in_the_heart_of_chamonix.jpg",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Chamonix Vacation Rentals",
+            "itemListElement": [
+                {
+                    "@type": "Accommodation",
+                    "name": "Apartment Couvercle",
+                    "description": "2 bedroom apartment which sleeps 5 people",
+                    "url": "https://chamonix-holiday-apartments.github.io/website/apartments/couvercle/"
+                },
+                {
+                    "@type": "Accommodation",
+                    "name": "Apartment Charpoua",
+                    "description": "1 bedroom apartment which sleeps up to 4 people",
+                    "url": "https://chamonix-holiday-apartments.github.io/website/apartments/charpoua/"
+                },
+                {
+                    "@type": "Accommodation",
+                    "name": "Apartment Betty",
+                    "description": "1 bedroom apartment which sleeps up to 4 people",
+                    "url": "https://chamonix-holiday-apartments.github.io/website/apartments/betty/"
+                }
+            ]
+        }
+    }
+    </script>
+    {{ else if eq .Type "apartments" }}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "{{ .Params.schema.type }}",
+        "name": "{{ .Title }}",
+        "description": "{{ .Description }}",
+        "image": [
+            {{- $images := .Page.Resources.Match "*.jpg" -}}
+            {{- range $index, $image := $images -}}
+                {{- if $index }},{{ end -}}
+                "{{ $image.Permalink }}"
+            {{- end -}}
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Chamonix",
+            "addressCountry": "FR"
+        },
+        "numberOfRooms": {{ .Params.schema.rooms }},
+        "occupancy": {
+            "@type": "QuantitativeValue",
+            "maxValue": {{ .Params.schema.maxOccupancy }}
+        },
+        "amenityFeature": [
+            {{ range $index, $amenity := .Params.schema.amenities }}
+            {{- if $index }},{{ end }}
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "{{ .name }}",
+                "value": {{ .value }}
+            }
+         {{- end }}
+        ],
+        "url": "{{ .Permalink }}",
+        "priceRange": "{{ .Params.schema.priceRange }}"
+    }
+    </script>
+    {{ end }}
+
 </head>
 <body class="d-flex flex-column min-vh-100">
     {{ partial "header.html" . }}
