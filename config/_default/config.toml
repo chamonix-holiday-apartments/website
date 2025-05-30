@@ -1,4 +1,5 @@
 baseURL = 'https://chamonix-holiday-apartments.github.io/website/'
+# baseURL = 'http://localhost:1313/'
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = true
 
