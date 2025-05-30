@@ -22,11 +22,11 @@ url = "apartments/charpoua/"
 weight = 100
 parent = "apartments"
 
-[[main]]
-name = "Betty 1 bed"
-url = "apartments/betty/"
-weight = 100
-parent = "apartments"
+# [[main]]
+# name = "Betty 1 bed"
+# url = "apartments/betty/"
+# weight = 100
+# parent = "apartments"
 
 [[main]]
 name = "Contact"
